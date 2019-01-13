@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.6
+- 3.5
+- 3.4
+- 2.7
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: cmeister2
+  password:
+    secure: MBGqTvF7gMlLUIZPbPAeneBea+MolWUYAzSALvubr+pgViz7GZtzu/FU1y4tKi7Qixb2NRLTMRN1JZ2lGNphn6wkET51RGN4uNyiQ1TSULXsUzrLnv9ZLHoi1GQjd/Lr+I8/OjpSpz2ebU49b1YJedxs+wJopQFXX1QcuDYIY4XiG7llHhYA4PtN6TGjtzJzZyePLS1WLcGEp3TW7/EascnL72oSyiDx1DE9B6/Ek19oYyiEQ5yEyoEIeyHPzak4GIweWTKWd69JsV7vIuTJxoAmrFOYzXodVxOIDN4VM9Ttl80JwhSln5nO81Cg/WhVW7BMlRJCNGthoXiDwEOWyZSMHjeCsDHoO2AzHIKiUnOmSpZtU6cC5V3vE+xVklJ0PB1JH9NpjsRlg9lk3hu1MYLpLnqtIhdbmJ1SFaimlIpauqK0tVArY0B14gdLAhe+7YZ16b6AArb70U9K6wef7+1DMW+vhO1bkF6ZUwph9U+vqGiElf+O4cVRZAWKGYKB6RqpZmEZ98ekJAeNYUjYr1QsOf5qhQLw1ueuP/veDXarortTZ36irsMqeemQftMb8Qa9GSm5Mje7kXQz7NJc+Lp5JRKzHq1yIZUf3i5/RQ6Yj9L+iVs4M+P1unt3x5Gxgefuy+RG2SLRnefByxBU7H8+rsGwoLG1XoY7ZlWKhB8=
+  on:
+    tags: true
+    repo: cmeister2/mtgcardlist
+    python: 3.6
